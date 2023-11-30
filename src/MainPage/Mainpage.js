@@ -9,11 +9,11 @@ function Main() {
 
 
     const addNewCOUNT=(countName)=>{
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = (today.getMonth() + 1).toString().padStart(2, '0');
-      const day = today.getDate().toString().padStart(2, '0');
-      const formattedDate = `${year}-${month}-${day}`;
+      // const today = new Date();
+      // const year = today.getFullYear();
+      // const month = (today.getMonth() + 1).toString().padStart(2, '0');
+      // const day = today.getDate().toString().padStart(2, '0');
+      // const formattedDate = `${year}-${month}-${day}`;
 
       setCount((prevCounts) => [
         ...prevCounts,
@@ -30,7 +30,8 @@ function Main() {
         }
       }
     }
-    //it will work only when the there is no name duplicated
+
+
 
 
 
@@ -49,7 +50,9 @@ function Main() {
                 {count.map((count, index) => (
                   <li key={index}>
                     {count.name}: {count.count}
+                    
                   </li>
+                  //add + and - with delete and edit buttons maybe 3 dot symbol
                 ))}
               </ul>
             </div>
@@ -60,7 +63,7 @@ function Main() {
                   >
                   +
                 </button>
-                {showModal && <AddModal />}
+                {showModal && <AddModal addNewCOUNT={addNewCOUNT} handleClose={handleClose}/>}
             </div>
       </div>
     );

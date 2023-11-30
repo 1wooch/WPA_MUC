@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function AddModal() {
+function AddModal({addNewCOUNT,handleClose}) {
    
     const [Name,setName]=useState("");
 
@@ -19,11 +19,20 @@ function AddModal() {
                       onChange={(e) => setName(e.target.value)} // Add onChange handler
               />
             </div>
-            
+            <div>
+            <button
+              onClick={() => addNewCOUNT(Name)} 
+              className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2"
+            >
+              ADD
+              
+            </button>
+            </div>
+           
           </div>
           <div className="modal-actions">
             <button
-              //onClick={handleClose}
+              onClick={handleClose}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2"
             >
               Close
